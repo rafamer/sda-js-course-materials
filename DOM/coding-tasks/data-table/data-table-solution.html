@@ -1,0 +1,145 @@
+<!doctype html>
+<html>
+<head></head>
+<body>
+<div>
+  <div class="movie">
+    <h1>Batman</h1>
+    <figure>
+      <img src="http://ia.media-imdb.com/images/M/MV5BMTYwNjAyODIyMF5BMl5BanBnXkFtZTYwNDMwMDk2._V1_UX182_CR0,0,182,268_AL_.jpg" />
+      <figcaption>
+        More detailson :
+        <a href="http://www.imdb.com/title/tt0096895/">Imdb</a>
+      </figcaption>
+    </figure>
+    <div>
+      Poduction date:
+      <span>1989</span>
+    </div>
+    <h2>Cast:</h2>
+    <ul>
+      <li>Michael Keaton</li>
+      <li>Jack Nicholson</li>
+      <li>Kim Basinger</li>
+    </ul>
+  </div>
+  <div class="movie">
+    <h1>Superman</h1>
+    <figure>
+      <img src="http://ia.media-imdb.com/images/M/MV5BMWQ2YzkyNTUtNDc5NS00OGYxLThhYTItOWUyNDI1ZWQxM2JkXkEyXkFqcGdeQXVyNjUwNzk3NDc@._V1_UX182_CR0,0,182,268_AL_.jpg" />
+      <figcaption>
+        More detailson :
+        <a href="http://www.imdb.com/title/tt0078346/">Imdb</a>
+      </figcaption>
+    </figure>
+    <div>
+      Poduction date:
+      <span>1978</span>
+    </div>
+    <h2>Cast:</h2>
+    <ul>
+      <li>Christopher Reeve</li>
+      <li>Gene Hackman</li>
+      <li>Marlon Brando</li>
+    </ul>
+  </div>
+  <div class="movie">
+    <h1>Spider-Man</h1>
+    <figure>
+      <img src="http://ia.media-imdb.com/images/M/MV5BMzk3MTE5MDU5NV5BMl5BanBnXkFtZTYwMjY3NTY3._V1_UX182_CR0,0,182,268_AL_.jpg" />
+      <figcaption>
+        More detailson :
+        <a href="http://www.imdb.com/title/tt0145487/">Imdb</a>
+      </figcaption>
+    </figure>
+    <div>
+      Poduction date:
+      <span>2002</span>
+    </div>
+    <h2>Cast:</h2>
+    <ul>
+      <li>Tobey Maguire</li>
+      <li>Willem Dafoe</li>
+      <li>Kirsten Dunst</li>
+    </ul>
+  </div>
+</div>
+
+<script>
+  /**
+   * PL
+   *
+   * Na podstawie powyższego HTML, korzystając tylko z Javascriptu, stwórz htmlową tabelę on następującej struktórze:
+   *
+   * | tytuł filmy (link do imdb) | zdjęcie - plakat | rok produkcji | aktorzy wymienieni po przecinku
+   */
+
+  /**
+   * EN
+   *
+   * Based on HTML above, using only Javascriptu, create HTML table with following structure:
+   *
+   * | tile (link to imdb) | image poster | year of production | comma separated actors
+   */
+
+  /**
+   * @desc creates table row data model
+   * @param {HTMLElement} movieElement
+   * @returns {Object}
+   */
+  function createRowData(movieElement) {
+    return {
+      title: movieElement.querySelector('h1').textContent,
+      posterUrl: movieElement.querySelector('img').getAttribute('src'),
+      imdbUrl: movieElement.querySelector('a').getAttribute('href'),
+      year: movieElement.querySelector('span').textContent,
+      cast: getCastStringFromDOM(movieElement.getElementsByTagName('li'))
+    };
+  }
+
+  /**
+   * @desc gets comma separated string of names from DOM list
+   * @param {NodeList} htmlCollection
+   * @returns {String}
+   */
+  function getCastStringFromDOM(htmlCollection) {
+    // as htmlCollection is not an array it doesn't have map method
+    // I'm using map method from Array prototype and passing to it htmlCollection as a context
+    // and anonymous function as an argument using call method
+    var castArray = Array.prototype.map.call(htmlCollection, function (li)  {
+      return li.textContent;
+    });
+
+    return castArray.join(', ');
+  }
+
+  /**
+   * @desc creates HTML string for table row
+   * @param {Object} rowData
+   * @returns {String}
+   */
+  function createTableRowHTML(rowData) {
+    return '<tr><td><a href="' + rowData.imdbUrl + '">' + rowData.title + '</a></td><td>' +
+      '<img src="' + rowData.posterUrl + '" /></td><td>' + rowData.year + '</td><td>' + rowData.cast + '</td></tr>';
+  }
+
+  var body = document.querySelector('body');
+  var movies = document.getElementsByClassName('movie');
+
+  // as movies is not an array it doesn't have map method
+  // I'm using map method from Array prototype and passing to it movies as a context
+  // and createRowData function as an argument using call method
+  var tableData = Array.prototype.map.call(movies, createRowData);
+
+  var table = document.createElement('table');
+
+  table.innerHTML = tableData.reduce(
+    function (outputHtml, tableDataItem) {
+      return outputHtml + createTableRowHTML(tableDataItem);
+    },
+    ''
+  );
+  body.appendChild(table);
+</script>
+</body>
+</html>
