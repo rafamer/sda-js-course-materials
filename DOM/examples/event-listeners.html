@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head></head>
+<body>
+<button id="myButton">Click Me!</button>
+
+<script>
+  var button = document.getElementById('myButton');
+  var counter = 0;
+
+  function click() {
+    counter++;
+    alert('Button was clicked ' + counter);
+
+    if (counter >= 3) {
+      button.removeEventListener('click', click);
+    }
+  }
+
+  button.addEventListener('click', click);
+</script>
+</body>
+</html>

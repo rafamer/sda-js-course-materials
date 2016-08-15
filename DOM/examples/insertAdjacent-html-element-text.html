@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+</head>
+<body>
+  <div>
+    <p>
+      <strong>Lorem ipsum</strong>
+    </p>
+  </div>
+
+  <script>
+    var p = document.querySelector('p');
+    var div = document.querySelector('div');
+    var htmlString = '<span>test 123</span>';
+    var element = document.createElement('pre');
+    var text = 'Lorem ipsum dolor';
+
+    console.log('\n ### initial DOM state ### \n\n');
+    console.log(div.innerHTML);
+
+    p.insertAdjacentHTML('beforebegin', htmlString);
+    console.log('\n ### insertAdjacentHTML beforebegin ### \n\n');
+    console.log(div.innerHTML);
+
+    p.insertAdjacentText('afterbegin', text);
+    console.log('\n ### insertAdjacentText afterbegin ### \n\n');
+    console.log(div.innerHTML);
+
+    p.insertAdjacentHTML('beforeend', htmlString);
+    console.log('\n ### insertAdjacentHTML beforeend ### \n\n');
+    console.log(div.innerHTML);
+
+    element.textContent = text;
+    p.insertAdjacentElement('afterend', element);
+    console.log('\n ### insertAdjacentElement afterend ### \n\n');
+    console.log(div.innerHTML);
+
+  </script>
+</body>
+</html>

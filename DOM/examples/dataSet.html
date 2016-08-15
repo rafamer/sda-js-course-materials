@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head>
+</head>
+<body>
+  <img src="" alt="Lorem ipsum"  data-name="abc"  data-id="myLink" data-src="link primary" data-size="12345">
+
+  <script>
+    var img = document.querySelector('img');
+
+    console.log('img dataset: ', img.dataset);
+    console.log('img data-name: ', img.dataset.name);
+    console.log('img data-abc: ', img.dataset.abc);
+
+    console.log('\n ### set data-abc ### \n\n');
+    img.dataset.abc = 'test 123';
+    console.log('img dataset: ', img.dataset);
+    console.log('img data-abc: ', img.dataset.abc);
+
+  </script>
+</body>
+</html>

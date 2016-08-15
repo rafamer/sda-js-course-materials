@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+  <script>
+    console.log('DOM is not ready');
+
+    console.log(document.getElementById('before'));
+    console.log(document.getElementById('after'));
+
+    document.addEventListener('DOMContentLoaded', function () {
+      console.log('DOM is ready');
+
+      console.log(document.getElementById('before'));
+      console.log(document.getElementById('after'));
+    });
+  </script>
+</head>
+<body>
+<p id='before'>Before bottom script</p>
+
+<script>
+  console.log('DOM elements above this script tag are accessible');
+
+  console.log(document.getElementById('before'));
+  console.log(document.getElementById('after'));
+</script>
+
+<p id='after'>After bottom script</p>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+</head>
+<body>
+  <p style="background-color: blue; color: red; font-size: 30px; padding: 30px; text-transform: uppercase;">
+    Lorem ipsum
+  </p>
+
+  <script>
+    var p = document.querySelector('p');
+
+    console.log('p.style: ', p.style);
+    console.log('No of set style attributes: ', p.style.length);
+    console.log('Style text content: ', p.style.cssText);
+
+    console.log('\n ### adding styles ### \n\n');
+
+    p.style.textDecoration = 'underline';
+
+    console.log('p.style: ', p.style);
+    console.log('No of set style attributes: ', p.style.length);
+    console.log('Style text content: ', p.style.cssText);
+
+    console.log('\n ### changing styles cssText ### \n\n');
+    p.style.cssText = 'color: green;';
+
+    console.log('p.style: ', p.style);
+    console.log('No of set style attributes: ', p.style.length);
+    console.log('Style text content: ', p.style.cssText);
+  </script>
+</body>
+</html>

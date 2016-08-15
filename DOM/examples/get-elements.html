@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+</head>
+<body>
+  <header>
+    <h1 class='title'>Moja Strona</h1>
+    <nav class='navigation'>
+      <a href='/index.html'>Start</a>
+      <a href='/blog.html'>Blog</a>
+      <a href='/contact.html'>Kontakt</a>
+    </nav>
+  </header>
+
+  <section>
+    <p name='first-paragraph'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <p>Ut euismod augue eu quam dictum, elementum ornare tortor aliquet.</p>
+  </section>
+
+  <footer>
+    <a id='contact-us' href='napisz-do-nas.html'>Napisz do nas</a>
+  </footer>
+
+  <script>
+     // wypisz do konsoli treść linka w footerze
+     console.log(
+       '1. element with id "contact-us" text: ',
+       document.getElementById('contact-us').textContent
+     );
+
+     // wypisz do konsoli treść H1 z headera
+     console.log(
+       '2. first element with className "title" text: ',
+       document.getElementsByClassName('title')[0].textContent
+     );
+
+     // wypisz do konsoli treść drugiego paragrafu z sekcji
+     console.log(
+       '3. second paragraph text: ',
+       document.getElementsByTagName('p')[1].textContent
+     );
+
+     // wypisz do konsoli treść elementu o atrybucie name === first-paragraph
+     console.log(
+       '4. first element with name attr "first-paragraph" text: ',
+       document.getElementsByName('first-paragraph')[0].textContent
+     );
+
+     // wypisz do konsoli treść pierwszego linka z navigacji
+     console.log(
+       '5. first link which is a descendant of nav text: ',
+       document.querySelector('nav a').textContent
+     );
+
+     // wypisz do konsoli treść ostatniego linka z navigacji
+     var navLinks = document.querySelectorAll('.navigation a');
+
+     console.log(
+       '6. last link which is a descendant of element with className "navigation" text: ',
+       navLinks[navLinks.length - 1].textContent
+     );
+
+     // wypisz do konsoli treść pierwszego linka z navigacji
+     var nav = document.getElementsByTagName('nav')[0];
+
+     console.log(
+       '7. first link which is a descendant of first nav element in document text: ',
+       nav.getElementsByTagName('a')[0].textContent
+     );
+  </script>
+</body>
+</html>

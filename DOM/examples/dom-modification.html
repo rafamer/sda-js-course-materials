@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+</head>
+<body>
+<article>
+  <header>
+    <h1>Lorem ipsum dolor</h1>
+    <nav>
+      <a href="#first">First section</a>
+      <a href="#second">Second section</a>
+    </nav>
+  </header>
+  <section>
+    <h2>first Section</h2>
+    <p>Lorem ipsum</p>
+    <p>Lorem ipsum</p>
+    <p>Lorem ipsum</p>
+  </section>
+  <section>
+    <h2>first Section</h2>
+    <p>Lorem ipsum</p>
+    <p>Lorem ipsum</p>
+    <p>Lorem ipsum</p>
+  </section>
+  <footer>
+    <p>Thank you for reading</p>
+  </footer>
+</article>
+
+<script>
+  var firstSection = document.querySelector('section');
+
+  console.log(firstSection.outerHTML);
+
+  console.log('\n ### appendChild ### \n\n');
+
+  var newNode = document.createElement('p');
+  newNode.textContent = 'text 123';
+
+  firstSection.appendChild(newNode);
+  console.log(firstSection.outerHTML);
+
+  console.log('\n ### removeChild ### \n\n');
+
+  var firstP = firstSection.querySelector('p');
+
+  firstSection.removeChild(firstP);
+  console.log(firstSection.outerHTML);
+
+  console.log('\n ### replaceChild ### \n\n');
+
+  var newChild = document.createElement('pre');
+  var lastChild = firstSection.lastElementChild;
+
+  newChild.textContent = 'Lorem ipsum dolor';
+  firstSection.replaceChild(newChild, lastChild);
+  console.log(firstSection.outerHTML);
+
+  console.log('\n ### insertBefore ### \n\n');
+
+  var footer = document.querySelector('footer');
+  var footerP = footer.getElementsByTagName('p')[0];
+  var newFooterP = document.createElement('p');
+
+  console.log(footer.outerHTML);
+
+  newFooterP.textContent = 'lorem ipsum';
+  footer.insertBefore(newFooterP, footerP);
+  console.log(footer.outerHTML);
+
+  console.log('\n ### cloneNode ### \n\n');
+
+  var header = document.querySelector('header');
+
+  console.log('default header clone: ', header.cloneNode());
+  console.log('deep header clone: ', header.cloneNode(true));
+</script>
+</body>
+</html>

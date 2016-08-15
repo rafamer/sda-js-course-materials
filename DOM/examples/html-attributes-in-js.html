@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+</head>
+<body>
+  <a href="abc.html" title="Lorem ipsum link" target="_blank" name="abc" id="myLink" class="link primary" data-size="12345">
+    Lorem ipsum
+  </a>
+
+  <script>
+    var link = document.querySelector('a');
+
+    console.log('link attributes: ', link.attributes);
+    console.log('link data-size attribute: ', link.getAttribute('data-size'));
+    console.log('link has data-size attribute? ', link.hasAttribute('data-size'));
+
+    console.log('\n ### remove attribute data-size ### \n\n');
+    link.removeAttribute('data-size');
+    console.log('link attributes: ', link.attributes);
+    console.log('link data-size attribute: ', link.getAttribute('data-size'));
+    console.log('link has data-size attribute? ', link.hasAttribute('data-size'));
+  </script>
+</body>
+</html>

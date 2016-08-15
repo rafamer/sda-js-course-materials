@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head></head>
+<body>
+  <div id="myDiv">
+    <p>Lorem ipsum</p>
+  </div>
+
+  <script>
+    var myDiv = document.getElementById('myDiv');
+    var body = document.querySelector('body');
+
+    console.log('myDiv innerHTML: ', myDiv.innerHTML);
+    console.log('myDiv outerHTML: ', myDiv.outerHTML);
+    console.log('body firstElementChild nodeName (myDiv): ', body.firstElementChild.nodeName);
+
+    myDiv.innerHTML = '<span>Test 123</span>';
+
+    console.log('\n ### innerHTML changed ### \n\n');
+
+    console.log('myDiv innerHTML: ', myDiv.innerHTML);
+    console.log('myDiv outerHTML: ', myDiv.outerHTML);
+    console.log('body firstElementChild nodeName (myDiv): ', body.firstElementChild.nodeName);
+
+    myDiv.outerHTML = '<section><h1>Lorem Ipsum</h1><p>Test 1234</p></section>';
+
+    console.log('\n ### outerHTML changed ### \n\n');
+
+    console.log('body firstElementChild nodeName: ', body.firstElementChild.nodeName);
+    console.log('myDiv still holds reference to original myDiv element: ', myDiv.outerHTML);
+  </script>
+</body>
+</html>

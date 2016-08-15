@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+  <style>
+    ul {
+      cursor: pointer;
+      background-color: blue;
+      display: inline-block;
+      padding: 40px;
+    }
+
+    li {
+      cursor: pointer;
+      background-color: white;
+      margin-bottom: 30px;
+    }
+  </style>
+</head>
+<body>
+<ul>
+  <li>lorem ipsum 1</li>
+  <li>lorem ipsum 2</li>
+  <li>lorem ipsum 3</li>
+  <li>lorem ipsum 4</li>
+  <li>lorem ipsum 5</li>
+  <li>lorem ipsum 6</li>
+  <li>lorem ipsum 7</li>
+  <li>lorem ipsum 8</li>
+  <li>lorem ipsum 9</li>
+  <li>lorem ipsum 10</li>
+  <li>lorem ipsum 11</li>
+  <li>lorem ipsum 12</li>
+</ul>
+
+<script>
+  var list = document.querySelector('ul');
+
+  list.addEventListener('click', function (event) {
+    var targetTagName = event.target.tagName;
+
+    console.log(targetTagName);
+
+    if (targetTagName === 'LI') {
+      alert(event.target.textContent);
+    }
+  });
+</script>
+</body>
+</html>

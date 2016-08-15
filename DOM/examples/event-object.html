@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+  <style>
+    div {
+      cursor: pointer;
+      display: inline-block;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<div id="div-1" style="background-color: red;">1
+  <div id="div-2" style="background-color: green;">2</div>
+</div>
+
+<script>
+  var divs = document.getElementsByTagName('div');
+
+  /**
+   * @param {Number} eventPhase
+   * @returns {String}
+   */
+  function getEventPhaseName(eventPhase) {
+    switch (eventPhase) {
+      case 1:
+        return 'capturing phase';
+      case 2:
+        return 'at target';
+      case 3:
+        return 'bubbling phase';
+    }
+  }
+
+  /**
+   * @param {Event} event
+   */
+  function click(event) {
+    console.log('event type: ', event.type);
+    console.log('event target: ', event.target);
+    console.log('event currentTarget: ', event.currentTarget);
+    console.log('event phase raw: ', event.eventPhase);
+    console.log('event phase name: ', getEventPhaseName(event.eventPhase));
+    console.log('event', event);
+    console.log('\n\n');
+  }
+
+  // as divs is not an array but HTMLCollection which doesn't have forEach method
+  // I'm using forEach method from Array prototype and passing to it divs as a context
+  // and anonymous function as an argument using call method
+  Array.prototype.forEach.call(divs, function (div) {
+    div.addEventListener('click', click);
+  });
+</script>
+</body>
+</html>

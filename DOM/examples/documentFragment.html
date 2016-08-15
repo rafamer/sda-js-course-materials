@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head></head>
+<body>
+<ul></ul>
+<script>
+  var list = document.querySelector('ul');
+  var fragment = document.createDocumentFragment();
+  var listData = ['cat', 'dog', 'mouse', 'spider'];
+
+  console.log('list innerHTML: ', list.innerHTML);
+  console.log('fragment childNodes: ', fragment.childNodes);
+
+  console.log('\n ### Loop will start - appending items to DocumentFragment ### \n\n');
+
+  listData.forEach(function (item) {
+    var element = document.createElement('li');
+
+    element.textContent = item;
+    fragment.appendChild(element);
+    console.log('fragment childNodes: ', fragment.childNodes);
+  });
+
+  console.log('\n ### Loop is finished ### \n\n');
+
+  console.log('list innerHTML: ', list.innerHTML);
+
+  console.log('\n ### Append DocumentFragment ### \n\n');
+  list.appendChild(fragment);
+  console.log('list innerHTML: ', list.innerHTML);
+</script>
+</body>
+</html>

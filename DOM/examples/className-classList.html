@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+</head>
+<body>
+  <p class="primary intro my-paragraph">
+    Lorem ipsum
+  </p>
+
+  <script>
+    var p = document.querySelector('p');
+
+    console.log('\n ### className vs classList ### \n\n');
+
+    console.log('p className: ', p.className);
+    console.log('p classList: ', p.classList);
+
+    console.log('\n ### change className ### \n\n');
+
+    p.className = 'test';
+    console.log('p className: ', p.className);
+    console.log('p classList: ', p.classList);
+
+    console.log('\n ### classList add methods ### \n\n');
+    p.classList.add('new-class');
+    console.log('p className: ', p.className);
+    console.log('p classList: ', p.classList);
+
+    console.log('\n ### classList item methods ### \n\n');
+    console.log('p.classList.item(0) ', p.classList.item(0));
+
+    console.log('\n ### classList contains methods ### \n\n');
+    console.log('p.classList.contains(\'test\') ', p.classList.contains('test'));
+
+    console.log('\n ### classList remove methods ### \n\n');
+    p.classList.remove('new-class');
+    console.log('p className: ', p.className);
+    console.log('p classList: ', p.classList);
+
+    console.log('\n ### classList toggle methods ### \n\n');
+    p.classList.toggle('abc');
+    console.log('p className: ', p.className);
+    console.log('p classList: ', p.classList);
+
+    p.classList.toggle('test');
+    console.log('p className: ', p.className);
+    console.log('p classList: ', p.classList);
+  </script>
+</body>
+</html>

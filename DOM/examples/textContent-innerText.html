@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+</head>
+<body>
+  <h1 style="visibility: hidden;">Test 123</h1>
+  <p>Lorem ipsum</p>
+
+  <script>
+    var p = document.querySelector('p');
+    var body = document.querySelector('body');
+
+    console.log('\n ### get textContent ### \n\n');
+
+    console.log('p textContent: ', p.textContent);
+
+    console.log('\n ### differences between textContent and innerText ### \n\n');
+
+    var h1 = document.querySelector('h1');
+
+    console.log('hidden h1 textContent: ', h1.textContent);
+    console.log('hidden h1 innerText: ', h1.innerText);
+
+    console.log('\n\n');
+
+    console.log('body textContent: ', body.textContent);
+    console.log('body textContent: ', body.innerText);
+
+    console.log('\n ### set textContent ### \n\n');
+
+    body.textContent = 'New body text content';
+
+    console.log('new body textContent: ', body.textContent);
+  </script>
+</body>
+</html>

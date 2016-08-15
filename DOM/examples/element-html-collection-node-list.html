@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+</head>
+<body>
+<header>
+  <h1 class='title'>Moja Strona</h1>
+  <nav class='navigation'>
+    <a href='/index.html'>Start</a>
+    <a href='/blog.html'>Blog</a>
+    <a href='/contact.html'>Kontakt</a>
+  </nav>
+</header>
+
+<section>
+  <p name='first-paragraph'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+  <p>Ut euismod augue eu quam dictum, elementum ornare tortor aliquet.</p>
+</section>
+
+<footer>
+  <a id='contact-us' href='napisz-do-nas.html'>Napisz do nas</a>
+</footer>
+
+<script>
+  var element = document.getElementById('contact-us');
+  var htmlCollection = document.getElementsByTagName('a');
+  var nodeList = document.querySelectorAll('a');
+
+  console.log(
+    'document.getElementById(\'contact-us\') returned object prototype is: ',
+    Object.getPrototypeOf(element)
+  );
+  console.log(
+    'document.getElementsByTagName(\'a\') returned object prototype is: ',
+    Object.getPrototypeOf(htmlCollection)
+  );
+  console.log(
+    'document.querySelectorAll(\'a\') returned object prototype is: ',
+    Object.getPrototypeOf(nodeList)
+  );
+
+  console.log('htmlCollection length: ', htmlCollection.length);
+  console.log('nodeList length: ', nodeList.length);
+
+  var nav = document.querySelector('nav');
+  var newLink = document.createElement('a');
+
+  nav.appendChild(newLink);
+  console.log('new link added to DOM');
+
+  console.log('htmlCollection length: ', htmlCollection.length);
+  console.log('nodeList length: ', nodeList.length);
+</script>
+</body>
+</html>

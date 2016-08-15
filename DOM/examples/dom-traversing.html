@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+</head>
+<body>
+  <article>
+    <header>
+      <h1>Lorem ipsum dolor</h1>
+      <nav>
+        <a href="#first">First section</a>
+        <a href="#second">Second section</a>
+      </nav>
+    </header>
+    <section>
+      <h2>first Section</h2>
+      <p>Lorem ipsum</p>
+      <p>Lorem ipsum</p>
+      <p>Lorem ipsum</p>
+    </section>
+    <section>
+      <h2>first Section</h2>
+      <p>Lorem ipsum</p>
+      <p>Lorem ipsum</p>
+      <p>Lorem ipsum</p>
+    </section>
+    <footer>
+      <p>Thank you for reading</p>
+    </footer>
+  </article>
+
+  <script>
+    var firstSection = document.querySelector('section');
+
+    console.log('section childNodes: ', firstSection.childNodes);
+    console.log('section firstChild: ', firstSection.firstChild);
+    console.log('section lastChild: ', firstSection.lastChild);
+    console.log('section firstElementChild: ', firstSection.firstElementChild);
+    console.log('section lastElementChild: ', firstSection.lastElementChild);
+    console.log('section parentNode: ', firstSection.parentNode);
+    console.log('section nextSibling: ', firstSection.nextSibling);
+    console.log('section previousSibling: ', firstSection.previousSibling);
+    console.log('section nextElementSibling: ', firstSection.nextElementSibling);
+    console.log('section previousElementSibling: ', firstSection.previousElementSibling);
+  </script>
+</body>
+</html>
