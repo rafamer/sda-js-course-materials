@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+</head>
+<body>
+<nav>
+  <a href="" data-tracking-category="nav" data-tracking-label="start">Start</a>
+  <a href="" data-tracking-category="nav" data-tracking-label="offer">Oferta</a>
+  <a href="" data-tracking-category="nav" data-tracking-label="blog">Blog</a>
+  <a href="" data-tracking-category="nav" data-tracking-label="gellery">Galeria</a>
+  <a href="" data-tracking-category="nav" data-tracking-label="contact">Kontakt</a>
+</nav>
+<form id="myForm">
+  <h1>Formularz kontaktowy</h1>
+  <div>
+    <label for="name">Imię i nazwisko</label>
+    <input type="text" id="name">
+  </div>
+  <div>
+    <label for="email">Email</label>
+    <input type="text" id="email">
+  </div>
+  <div>
+    <label for="message">Wiadomość</label>
+    <textarea id="message"></textarea>
+  </div>
+  <div>
+    <button type="submit" id="submit">Wyślij</button>
+    <a href="" data-tracking-category="form" data-tracking-label="tutorial">Tutorial</a>
+
+  </div>
+</form>
+
+<script>
+  /**
+   * PL
+   *
+   * A) Wykorzystując poniższą funkcję trackEvent dodaj tracking do każdego linka w powyższym HTMLu.
+   *    Wykorzystaj atrybuty data przypisane do każdego linka. Pamiętaj o event delegation pattern.
+   *
+   * B) Wykorzystując poniższą funkcję trackEvent dodaj event tacking do wysyłki formularza.
+   *    - jako karegorię eventu podaj 'form'
+   *    - jako label eventu wykorzystaj id formularza
+   */
+
+  /**
+   * EN
+   *
+   * A) Using trackEvent function defined below add tracking all links on the page.
+   *    Use data attributes assigned to each link. Remember about event delegation pattern.
+   *
+   * B) Using trackEvent function defined below add tracking to form submit action.
+   *    - use 'form' as event category
+   *    - use form id as event label
+   */
+
+  /**
+   * @param {String} action - event type
+   * @param {String} category
+   * @param {String} label
+   */
+  function trackEvent(action, category, label) {
+    alert(action + ' ' + category + ' ' + label);
+  }
+
+  document.getElementsByTagName('body')[0].addEventListener('click', function (event) {
+    var target = event.target;
+
+    if (target.nodeName === 'A') {
+      trackEvent(event.type, target.dataset.trackingCategory, target.dataset.trackingLabel);
+    }
+  });
+
+  document.getElementsByTagName('form')[0].addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    trackEvent(event.type, 'form', event.target.id);
+  });
+</script>
+</body>
+</html>
