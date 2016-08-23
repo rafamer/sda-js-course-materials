@@ -1,0 +1,19 @@
+body {
+    font-size: 16px;
+}
+
+body p {
+    font-weight: bold;
+}
+
+body p span {
+    display: none;
+}
+
+body span {
+    color: red;
+}
+
+body img {
+    float: right;
+}
