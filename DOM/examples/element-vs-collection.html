@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head></head>
+<body>
+<p id="myP">
+  <span>fdsfsdfsdf</span>
+  <span>123345</span>
+  <span>fsdfsdf</span>
+  <span>aSasaS</span>
+  <span>FSDFSF</span>
+  <span>WEQWEQE</span>
+</p>
+<script>
+  var element = document.getElementById('myP');
+  var collection = document.getElementsByTagName('span');
+
+  console.log(Object.getPrototypeOf(element));
+  console.log(element);
+  console.log(Object.getPrototypeOf(collection));
+  console.log(collection);
+
+  // HTMLCollection is not Array
+  console.log('HTMLCollection is Array? ', Array.isArray(collection));
+
+  // convert HTMLCollection => Array
+  var collectionArr = Array.prototype.slice.call(collection);
+
+  console.log('converted HTMLCollection is Array? ', Array.isArray(collectionArr));
+
+  // test with array methods
+  console.log(collection.forEach);
+  console.log(collectionArr.forEach);
+</script>
+</body>
+</html>
