@@ -22,7 +22,7 @@
 
   /**
    * @desc show pangramChecker results in DOM
-   * @param {isPangram: Boolen, missingChars?:Array} data - pangramChecker results
+   * @param {{isPangram: Boolean, missingChars?: Array}} data - pangramChecker results
    */
   function showResult(data) {
     var isPangram = data.isPangram;
