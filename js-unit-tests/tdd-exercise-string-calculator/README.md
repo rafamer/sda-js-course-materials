@@ -19,7 +19,6 @@ Uzywamy [jasmine.js](http://jasmine.github.io/) oraz [testem.js](https://github.
 
 ## Instrukcję do zadania:
 1. Stwórz prosty kalkulator stringów - funkcję `add(str)` która:
-
   1. przyjmuje 0, 1 lub dwie liczby naturalne i zwraca ich sumę. Np. dla `'1,2'` zwraca `3` dla `'4'` zwraca 4 dla `''` zwaraca 0
   2. zacznij pisać testy od pustego stringa i stopniowo przechodź do opcji z jedną a następnie dwiema liczbami w stringu
   3. Kod powinnien być jak najprostszy
