@@ -1,0 +1,16 @@
+{
+  "name": "tdd-exercise-string-calculator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node_modules/.bin/testem",
+    "test-ci": "node_modules/.bin/testem ci"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jasmine": "^2.5.2",
+    "testem": "^1.12.0"
+  }
+}
