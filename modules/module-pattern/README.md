@@ -1,0 +1,1 @@
+Przeczytaj instrukcje w plikach `scripts.js` i `tracking-module.js`
