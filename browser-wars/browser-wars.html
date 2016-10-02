@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .csscalc p {
+      font-size: calc(10px * 4);
+    }
+  </style>
+</head>
+<body>
+  <p>Lorem ispum dolor</p>
+  <script src="modernizr-custom.js"></script>
+  <script>
+    // Modernizr feature detection in Javascript
+    if (Modernizr.csscalc) {
+      console.log(true);
+    } else {
+      console.log(false);
+    }
+  </script>
+</body>
+</html>
